@@ -131,6 +131,20 @@ if(map[day][hour+1] != null)
 if(map[day][hour] == null && map[day][hour+1] == null)
 	document.write(`<h3>There are no lectures scheduled within 2 hours from now.	</h3>`);
 
+
+document.write(`<hr>`);
+day = (day+abc);
+document.write(`<h3><br>Timetable of ${days[${day}]} .</h3>`);
+while(a<24){
+	ampm = (a<12)?'AM':'PM';
+	if(map[day][a] != null)
+	document.write(`<h3><a href="http://meet.google.com/${map[day][a]}"> ${" "+a%12} to ${(a%12)+1} ${ampm} ${subject[day][a]+" "}</a></h3>`);
+	a++;
+}
+
+document.write(`<hr>`);
+
+
 </script>
 </head>
 </html>
