@@ -133,6 +133,16 @@ if(map[day][hour] == null && map[day][hour+1] == null)
 
 
 
+document.write(`<h3><br>Timetable of $[day++]</h3>`);
+
+while(a<24){
+	ampm = (a<12)?'AM':'PM';
+	if(map[day][a] != null)
+	document.write(`<h3><a href="http://meet.google.com/${map[day][a]}"> ${" "+a%12} to ${(a%12)+1} ${ampm} ${subject[day][a]+" "}</a></h3>`);
+	a++;
+}
+
+
 </script>
 </head>
 </html>
