@@ -115,7 +115,7 @@ while(a<24){
 	document.write(`<h3><a href="http://meet.google.com/${map[day][a]}"> ${" "+a%12} to ${(a%12)+1} ${ampm} ${subject[day][a]+" "}</a></h3>`);
 	a++;
 }
-<hr>
+document.write(`<hr>`);
 document.write(`<h3><br>Current Lectures</h3>`);
 
 ampm = ((hour+1<12)?'AM':'PM');
