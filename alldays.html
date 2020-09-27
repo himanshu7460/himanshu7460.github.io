@@ -1,0 +1,130 @@
+<html>
+<head>
+	<script>
+	
+let map = {
+    '1' : {
+        '9' : 'hwh-kxji-ehi',
+        '10' : 'vtq-goqm-hjs',
+        '11' : 'cjg-uzui-gtv',
+        '13' : 'jrx-kytv-ptq',
+        '14' : 'cwp-zhom-htq',
+        '15' : 'cwp-zhom-htq',
+        '16' : 'cwp-zhom-htq',
+      },
+      '2' : { 
+        '10' : 'cjg-uzui-gtv',
+        '11' : 'hwh-kxji-ehi',
+        '13' : 'jrx-kytv-ptq',
+        '14' : 'cwp-zhom-htq',
+        '15' : 'hwh-kxji-ehi',
+        '16' : 'hwh-kxji-ehi',
+      },
+      '3' : {
+        '11' : 'hwh-kxji-ehi',
+        '13' : 'jrx-kytv-ptq',
+        '14' : 'vtq-goqm-hjs',
+        '15' : 'vtq-goqm-hjs',
+        '16' : 'vtq-goqm-hjs',
+      },
+      '4' : {
+        '11' : 'cjg-uzui-gtv',
+        '13' : 'vtq-goqm-hjs',
+        '14' : 'cwp-zhom-htq',
+        '15' : 'cjg-uzui-gtv',
+        '16' : 'cjg-uzui-gtv',
+      },
+      '5' : {
+        '9' : 'cjg-uzui-gtv',
+        '10' : 'vtq-goqm-hjs',
+        '11' : 'hwh-kxji-ehi',
+        '13' : 'jrx-kytv-ptq',
+        '14' : 'cwp-zhom-htq',
+        '15' : 'jrx-kytv-ptq',
+        '16' : 'jrx-kytv-ptq',
+      },
+      '6' : {
+        '8' : 'zpg-kodu-evf',
+        '9' : 'zpg-kodu-evf',
+      }
+};
+
+let subject = {
+    '1' : {
+        '9' : 'DAIE YLP/SRS',
+        '10' : 'DC VD/ADD',
+        '11' : 'KS DCV/NPD',
+        '13' : 'WT RAV/VBC',
+        '14' : 'ECES TRG/RAV Lab',
+        '15' : 'ECES TRG/RAV Lab',
+        '16' : 'ECES TRG/RAV Lab',
+      },
+      '2' : { 
+        '10' : 'KS DCV/NPD',
+        '11' : 'DAIE YLP/SRS',
+        '13' : 'WT RAV/VBC',
+        '14' : 'ECES TRG/RAV',
+        '15' : 'DAIE YLP/SRS/HBP Lab',
+        '16' : 'DAIE YLP/SRS/HBP Lab',
+      },
+      '3' : {
+        '11' : 'DAIE YLP/SRS',
+        '13' : 'WT RAV/VBC',
+        '14' : 'DC VD/ADD',
+        '15' : 'DC VD/ADD/ZJB Lab',
+        '16' : 'DC VD/ADD/ZJB Lab',
+      },
+      '4' : {
+        '11' : 'KS DCV/NPD',
+        '13' : 'DC VD/ADD',
+        '14' : 'ECES TRG/RAV',
+        '15' : 'KS DCV/NPD/ADD Lab',
+        '16' : 'KS DCV/NPD/ADD Lab',
+      },
+      '5' : {
+        '9' : 'KS DCV/NPD',
+        '10' : 'DC VD/ADD',
+        '11' : 'DAIE YLP/SRS',
+        '13' : 'WT RAV/VBC',
+        '14' : 'ECES TRG/RAV',
+        '15' : 'WT RAV/VBC/TRG Lab',
+        '16' : 'WT RAV/VBC/TRG Lab',
+      },
+      '6' : {
+        '8' : 'SDP DCV Lab',
+        '9' : 'SDP DCV Lab',
+      }
+};
+
+
+document.write(`<h3><br>Timetable of today</h3>`);
+document.write(`<hr>`);
+
+let day = new Date().getDay(); // day =1;
+let hour = new Date().getHours(); // hour = 9;
+let today=new Date();
+let noon=new Date(today.getFullYear(),today.getMonth(),today.getDate(),12,0,0);
+let ampm = (today.getTime()<noon.getTime())?'AM':'PM';
+
+console.log(map[day][hour]);
+var WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+var a=1;
+var b=1;
+
+while(b<7)
+{	document.write(`<h3><br>${" "+WEEKDAYS[b-1	]}</h3>`);
+	while(a<24){
+		ampm = (a<12)?'AM':'PM';
+		if(map[b][a] != null)
+		document.write(`<h3><a href="http://meet.google.com/${map[b][a]}"> ${" "+a%12} to ${(a%12)+1} ${ampm} ${subject[b][a]+" "}</a></h3>`);
+		a++;
+	}
+	a=1;
+	document.write(`<hr>`);
+	b++;
+} 
+
+
+</script>
+</head>
+</html>
