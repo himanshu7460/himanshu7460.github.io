@@ -46,6 +46,10 @@ let map = {
         '8' : 'zpg-kodu-evf',
         '9' : 'zpg-kodu-evf',
       }
+	'7' : {
+        '8' : 'zpg-kodu-evf',
+        '9' : 'zpg-kodu-evf',
+      }
 };
 
 let subject = {
@@ -93,6 +97,10 @@ let subject = {
         '8' : 'SDP DCV Lab',
         '9' : 'SDP DCV Lab',
       }
+	'7' : {
+        '8' : 'SDP DCV Lab',
+        '9' : 'SDP DCV Lab',
+      }
 };
 
 let day = new Date().getDay(); // day =1;
@@ -111,6 +119,7 @@ while(a<24){
 	a++;
 }
 document.write(`<hr>`);
+document.write(`<h3><a href="http://himanshu7460.github.io/alldays.html">SEE WHOLE TIMETABLE</a></h3>`);
 document.write(`<h3><br>Current Lectures</h3>`);
 ampm = ((hour+1<12)?'AM':'PM');
 if(map[day][hour] != null)
