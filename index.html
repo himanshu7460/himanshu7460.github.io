@@ -103,7 +103,6 @@ let ampm = (today.getTime()<noon.getTime())?'AM':'PM';
 let abc = 1;
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var a=9;
-console.log(map[day][hour]);
 	
 document.write(`<h3><br>Timetable of today</h3>`);
 while(a<24){
@@ -112,6 +111,8 @@ while(a<24){
 	document.write(`<h3><a href="http://meet.google.com/${map[day][a]}"> ${" "+a%12} to ${(a%12)+1} ${ampm} ${subject[day][a]+" "}</a></h3>`);
 	a++;
 }
+document.write(`<hr>`);
+document.write(`<h3><a href="http://himanshu7460.github.io/alldays.html">WHOLE TIMETABLE</a></h3>`);
 document.write(`<hr>`);
 document.write(`<h3><br>Current Lectures</h3>`);
 
