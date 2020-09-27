@@ -1,8 +1,6 @@
 <html>
 <head>
-	<script>
-		
-
+<script>
 let map = {
     '1' : {
         '9' : 'hwh-kxji-ehi',
@@ -104,12 +102,10 @@ let noon=new Date(today.getFullYear(),today.getMonth(),today.getDate(),12,0,0);
 let ampm = (today.getTime()<noon.getTime())?'AM':'PM';
 let abc = 1;
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-console.log(map[day][hour]);
-
 var a=9;
-
+console.log(map[day][hour]);
+	
 document.write(`<h3><br>Timetable of today</h3>`);
-
 while(a<24){
 	ampm = (a<12)?'AM':'PM';
 	if(map[day][a] != null)
@@ -119,8 +115,7 @@ while(a<24){
 document.write(`<hr>`);
 document.write(`<h3><br>Current Lectures</h3>`);
 
-ampm = ((hour+1<12)?'AM':'PM');
-
+	ampm = ((hour+1<12)?'AM':'PM');
 if(map[day][hour] != null)
 	{document.write(`<h3><a href="http://meet.google.com/${map[day][hour]}">  ${subject[day][hour]+" "}</br>${" "+hour%12} to ${(hour%12)+1} ${ampm} </a></h3>`);
 	}
