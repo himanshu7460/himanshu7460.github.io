@@ -45,10 +45,6 @@ let map = {
       '6' : {
         '8' : 'zpg-kodu-evf',
         '9' : 'zpg-kodu-evf',
-      },
-	'7' : {
-        '8' : 'zpg-kodu-evf',
-        '9' : 'zpg-kodu-evf',
       }
 };
 
@@ -96,10 +92,6 @@ let subject = {
       '6' : {
         '8' : 'SDP DCV Lab',
         '9' : 'SDP DCV Lab',
-      },
-	'7' : {
-        '8' : 'SDP DCV Lab',
-        '9' : 'SDP DCV Lab',
       }
 };
 
@@ -111,28 +103,35 @@ let ampm = (today.getTime()<noon.getTime())?'AM':'PM';
 let abc = 1;
 var a=9;
 	
-document.write(`<h3><br>Timetable of today</h3>`);
-while(a<24){
-	ampm = (a<12)?'AM':'PM';
-	if(map[day][a] != null)
-	document.write(`<h3><a href="http://meet.google.com/${map[day][a]}"> ${" "+a%12} to ${(a%12)+1} ${ampm} ${subject[day][a]+" "}</a></h3>`);
-	a++;
+
+if(day!=7)
+{
+	document.write(`<h3><br>Timetable of today</h3>`);
+	while(a<24){
+		ampm = (a<12)?'AM':'PM';
+		if(map[day][a] != null)
+		document.write(`<h3><a href="http://meet.google.com/${map[day][a]}"> ${" "+a%12} to ${(a%12)+1} ${ampm} ${subject[day][a]+" "}</a></h3>`);
+		a++;
+	}
+	document.write(`<hr>`);
+	document.write(`<h3><a href="http://himanshu7460.github.io/alldays.html">SEE WHOLE TIMETABLE</a></h3>`);
+	document.write(`<h3><br>Current Lectures</h3>`);
+	ampm = ((hour+1<12)?'AM':'PM');
+	if(map[day][hour] != null)
+		{document.write(`<h3><a href="http://meet.google.com/${map[day][hour]}">  ${subject[day][hour]+" "}</br>${" "+hour%12} to ${(hour%12)+1} ${ampm} </a></h3>`);
+		}
+
+	ampm = ((hour+2<12)?'AM':'PM');
+	if(map[day][hour+1] != null)
+		{document.write(`<h3><a href="http://meet.google.com/${map[day][hour+1]}"> ${subject[day][hour+1]+" "}</br>${" "+((hour%12)+1)} to ${(hour%12)+2} ${ampm} </a></h3>`);
+		}
+	if(map[day][hour] == null && map[day][hour+1] == null)
+		document.write(`<h3>There are no lectures scheduled within 2 hours from now.</h3>`);
 }
-document.write(`<hr>`);
-document.write(`<h3><a href="http://himanshu7460.github.io/alldays.html">SEE WHOLE TIMETABLE</a></h3>`);
-document.write(`<h3><br>Current Lectures</h3>`);
-ampm = ((hour+1<12)?'AM':'PM');
-if(map[day][hour] != null)
-	{document.write(`<h3><a href="http://meet.google.com/${map[day][hour]}">  ${subject[day][hour]+" "}</br>${" "+hour%12} to ${(hour%12)+1} ${ampm} </a></h3>`);
-	}
-
-ampm = ((hour+2<12)?'AM':'PM');
-if(map[day][hour+1] != null)
-	{document.write(`<h3><a href="http://meet.google.com/${map[day][hour+1]}"> ${subject[day][hour+1]+" "}</br>${" "+((hour%12)+1)} to ${(hour%12)+2} ${ampm} </a></h3>`);
-	}
-if(map[day][hour] == null && map[day][hour+1] == null)
-	document.write(`<h3>There are no lectures scheduled within 2 hours from now.</h3>`);
-
+else
+{
+	document.write(`<h3>Today is Sunday DUHH........</h3>`);
+}
 
 </script>
 </head>
